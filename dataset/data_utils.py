@@ -168,6 +168,7 @@ class MyDataset(data.Dataset):
                 data_list.append((x, bboxs, text))
             else:
                 print('there is no suit bbox on {}'.format(label_path))
+        print("data_list:",data_list)
         return data_list
 
     def _get_annotation(self, label_path: str) -> tuple:
