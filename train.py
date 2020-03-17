@@ -35,6 +35,9 @@ def parse_args():
     parser.add_argument('--testroot', type=str,
                         default=None, help='testroot')
 
+    parser.add_argument('--backbone', type=str,
+                        default=None, help='backbone')
+
     return parser.parse_args()
 
 
@@ -168,8 +171,10 @@ def main():
     args = parse_args()
     trainroot = args.trainroot
     testroot = args.testroot
+    backbone = args.backbone
     print("trainroot:",trainroot)
     print("testroot:",testroot)
+    print("backbone:",backbone)
 
     if config.output_dir is None:
         config.output_dir = 'output'
@@ -200,7 +205,7 @@ def main():
                                    num_workers=int(config.workers))
 
     writer = SummaryWriter(config.output_dir)
-    model = PSENet(backbone=config.backbone, pretrained=config.pretrained, result_num=config.n, scale=config.scale)
+    model = PSENet(backbone=backbone, pretrained=config.pretrained, result_num=config.n, scale=config.scale)
     if not config.pretrained and not config.restart_training:
         model.apply(weights_init)
 
