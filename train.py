@@ -194,6 +194,8 @@ def main():
 
     train_data = MyDataset(trainroot, data_shape=config.data_shape, n=config.n, m=config.m,
                            transform=transforms.ToTensor())
+
+    print("len(train_data):",len(train_data))
     train_loader = Data.DataLoader(dataset=train_data, batch_size=config.train_batch_size, shuffle=True,
                                    num_workers=int(config.workers))
 
