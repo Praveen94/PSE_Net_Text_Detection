@@ -168,6 +168,8 @@ def main():
     args = parse_args()
     trainroot = args.trainroot
     testroot = args.testroot
+    print("trainroot:",trainroot)
+    print("testroot:",testroot)
 
     if config.output_dir is None:
         config.output_dir = 'output'
