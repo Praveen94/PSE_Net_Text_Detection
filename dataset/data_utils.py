@@ -160,9 +160,11 @@ class MyDataset(data.Dataset):
 
     def load_data(self, data_dir: str) -> list:
         data_list = []
+        print("list:",list(glob.glob(data_dir + '/img/*.jpg', recursive=True)))
         for x in glob.glob(data_dir + '/img/*.jpg', recursive=True):
             d = pathlib.Path(x)
             label_path = os.path.join(data_dir, 'gt', ('gt_' + str(d.stem) + '.txt'))
+            print()
             bboxs, text = self._get_annotation(label_path)
             if len(bboxs) > 0:
                 data_list.append((x, bboxs, text))
