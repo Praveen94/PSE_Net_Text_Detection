@@ -63,7 +63,7 @@ def main(model_path, backbone, scale, path, save_path, gpu_id):
 
 
 if __name__ == '__main__':
-    os.environ['CUDA_VISIBLE_DEVICES'] = str('2')
+    os.environ['CUDA_VISIBLE_DEVICES'] = str('1')
     backbone = 'resnet152'
     scale = 4
     args = parse_args()
