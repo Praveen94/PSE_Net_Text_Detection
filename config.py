@@ -33,7 +33,7 @@ restart_training = True
 checkpoint = ''
 
 # net config
-backbone = 'resnet152'
+backbone = 'resnet18'
 Lambda = 0.7
 n = 6
 m = 0.5

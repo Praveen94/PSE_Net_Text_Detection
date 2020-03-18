@@ -105,7 +105,7 @@ if __name__ == '__main__':
     import time
 
     device = torch.device('cpu')
-    backbone = 'shufflenetv2'
+    backbone = 'MobileNetV3_Small'
     net = PSENet(backbone=backbone, pretrained=False, result_num=6).to(device)
     net.eval()
     x = torch.zeros(1, 3, 512, 512).to(device)
